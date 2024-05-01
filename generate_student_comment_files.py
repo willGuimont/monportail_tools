@@ -40,6 +40,7 @@ if __name__ == '__main__':
     out_course.mkdir(exist_ok=True, parents=True)
 
     students = [list(row[1:3]) for idx, row in excel_array.iterrows()]
+    students = [student for student in students if '(Abandon)' not in student[0]]
 
     print(f'Creating files for {len(students)} students in total')
 
